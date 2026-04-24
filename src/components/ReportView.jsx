@@ -22,7 +22,7 @@ export default function ReportView() {
 
   // Strategic assumptions for Kazakhstan Pivot
   const costDomesticPerKw = 140; // US$/kW/month (国内一线/新加坡/传统公有云估算)
-  const costKazakhstanPerKw = 70;    // US$/kW/month (哈萨克斯坦自建中心估算)
+  const costKazakhstanPerKw = 60;    // US$/kW/month (基于哈国 3-4美分绿电 PPA 极简自建估算)
   
   const allDomesticCost = results.totals.peakKw * costDomesticPerKw;
   const splitPortfolioCost = (results.portfolio.realtimeKw * costDomesticPerKw) + (results.portfolio.queueableKw * costKazakhstanPerKw);
@@ -92,7 +92,7 @@ export default function ReportView() {
               {Math.ceil(results.portfolio.realtimeKw).toLocaleString()} <span style={{fontSize:'1rem', fontWeight:'normal'}}>kW</span>
             </p>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-main)' }}>
-              <strong>部署建议：</strong> 哈萨克斯坦亚欧海缆/陆缆核心节点，或保留部分国内/新加坡边缘节点。通过极低延迟服务中东和欧洲市场，同时满足部分数据不出境的合规需求。
+              <strong>部署建议：</strong> 依托哈萨克斯坦亚欧通信枢纽的优势，直接满足<strong>哈萨克斯坦本国及中亚地区</strong>的数据主权与算力消耗；同时通过核心节点辐射<strong>中东与欧洲</strong>市场，提供极低延迟的 Token 级出口服务。
             </p>
           </div>
           <div style={{ border: '1px solid #e5e7eb', borderRadius: '8px', padding: '20px' }}>
@@ -118,7 +118,7 @@ export default function ReportView() {
           3. 哈国出海战略的 TCO 回报测算 (Commercial Value)
         </h2>
         <p style={{ marginBottom: '16px', fontSize: '0.95rem', color: '#4b5563' }}>
-          基于基准分析：国内一线或新加坡等热门云网核心区域的托管均价约 <strong>$140/kW/月</strong>，而哈萨克斯坦自建或合资算力中心的成本仅约 <strong>$70/kW/月</strong>。如果我们将溢出算力放置在哈国，财务预测如下：
+          基于基准分析：国内一线或新加坡等传统核心云网节点的托管均价约 <strong>$140/kW/月</strong>。而哈萨克斯坦拥有得天独厚的电力红利：一般工业电价仅 <strong>6-9 美分/kWh</strong>，若大规模签订绿电 PPA 协议，电力成本可极速压至 <strong>3-4 美分/kWh</strong>。借此优势，哈萨克斯坦离岸算力中心的综合运营成本可降至 <strong>$60/kW/月</strong>。财务预测如下：
         </p>
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '1rem', border: '1px solid #e5e7eb' }}>
           <tbody>
@@ -160,7 +160,7 @@ export default function ReportView() {
           </p>
           <ul style={{ paddingLeft: '20px', color: '#1e40af', fontSize: '0.95rem', lineHeight: '1.6' }}>
             <li><strong>供应链突围</strong>：在哈萨克斯坦合规建立离岸数据中心，有助于缓解直接向国内进口高算力 GPU 的合规压力与地缘摩擦，为企业的算力底座提供缓冲空间。</li>
-            <li><strong>CBAM 碳壁垒应对</strong>：如果产生的 Token 服务最终客户在欧洲，哈国现有的煤电结构将带来极其严重的 Scope 2/3 碳足迹，并面临欧盟 CBAM 的天价惩罚。<strong>强烈建议在哈萨克斯坦的项目中，捆绑投资当地的风光新能源项目</strong>，实现基于遥测的 24/7 无碳电力 (CFE) 抵消，而非购买劣质的年度 RECs。</li>
+            <li><strong>CBAM 碳壁垒应对</strong>：如果产生的 Token 服务最终客户在欧洲，使用常规工业煤电将面临极其严重的 Scope 2/3 碳足迹及欧盟 CBAM 的天价惩罚。<strong>强烈建议在哈萨克斯坦的项目中，直接签署 3-4美分/kWh 的绿电 PPA (购电协议) 并捆绑当地风光新能源项目</strong>，实现基于遥测的 24/7 无碳电力 (CFE) 抵消，将合规成本转化为压倒性的竞争优势。</li>
           </ul>
         </div>
       </section>
